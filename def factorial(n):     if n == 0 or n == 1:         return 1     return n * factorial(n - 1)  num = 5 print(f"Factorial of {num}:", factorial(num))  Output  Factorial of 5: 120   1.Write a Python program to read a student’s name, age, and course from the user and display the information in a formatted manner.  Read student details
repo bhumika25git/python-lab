@@ -1,0 +1,21 @@
+Read student details from user
+name = input("Enter student's name: ")
+age = input("Enter student's age: ")
+course = input("Enter student's course: ")
+Display the information in formatted manner
+print("\n--- Student Details ---")
+print(f"Name : {name}")
+print(f"Age : {age}")
+print(f"Course : {course}")
+
+output
+Enter student's name: bhumika
+Enter student's age: 19
+Enter student's course: btce
+
+--- Student Details ---
+Name : bhumika
+Age : 19
+Course : btce
+
+Process finished with exit code 0
