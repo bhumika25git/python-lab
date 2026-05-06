@@ -1,0 +1,28 @@
+import os
+import sys
+import pathlib
+import zipfile
+
+# Take directory input
+dirName = input("Enter Directory name to backup: ")
+
+# Check if directory exists
+if not os.path.isdir(dirName):
+    print("Directory", dirName, "doesn't exist")
+    sys.exit(0)
+
+# Create Path object
+curDir = pathlib.Path(dirName)
+
+# Create zip file
+with zipfile.ZipFile("myZip.zip", mode="w") as archive:
+    for file_path in curDir.rglob("*"):
+        if file_path.is_file():
+            print(file_path)
+            archive.write(file_path)
+
+# Check if zip file created
+if os.path.isfile("myZip.zip"):
+    print("Archive myZip.zip created successfully")
+else:
+    print("Error in creating zip archive")
